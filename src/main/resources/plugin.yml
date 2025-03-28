@@ -1,0 +1,28 @@
+name: tpspawn
+version: '1.0.3'
+main: me.honeyberries.tpSpawn.TPSpawn
+api-version: '1.21'
+authors: [ HoneyBerries ]
+folia-supported: true
+description: Lets you go to the world spawn by using /spawn
+commands:
+  spawn:
+    description: "Lets you go to spawn instantly with /spawn"
+    usage: "/spawn"
+    aliases: []
+
+  tpspawn:
+    description: "Lets you modify the plugin settings"
+    usage: "/tpspawn <action> <value>"
+    aliases: []
+
+permissions:
+  tpspawn.command.spawn:
+    description: "Allows a player to use /spawn"
+    default: true
+  tpspawn.cooldown.bypass:
+    description: "Allows you to bypass the cooldown"
+    default: op
+  tpspawn.command.edit:
+    description: "Lets you reload config and edit stuff"
+    default: op
