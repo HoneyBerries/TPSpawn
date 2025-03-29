@@ -80,7 +80,7 @@ public class SpawnCommand implements CommandExecutor, TabExecutor {
 
         // Get world spawn and teleport the player
         World world = Objects.requireNonNull(Bukkit.getWorld("world"), "Overworld does not exist!");
-        player.teleport(world.getSpawnLocation());
+        player.teleportAsync(world.getSpawnLocation());
         player.sendMessage(Component.text("You went to the world's spawn!", NamedTextColor.GOLD)
                 .clickEvent(ClickEvent.suggestCommand("spawn")));
 
@@ -121,9 +121,9 @@ public class SpawnCommand implements CommandExecutor, TabExecutor {
     private void sendHelpMessage(Player player) {
         player.sendMessage(Component.text("------ Spawn Command Help ------", NamedTextColor.GREEN));
         player.sendMessage(Component.text("/spawn", NamedTextColor.AQUA)
-                .append(Component.text(" - Teleports you to the world's spawn.", NamedTextColor.GRAY)));
+                .append(Component.text(" - Teleports you to the world's spawn.", NamedTextColor.GOLD)));
         player.sendMessage(Component.text("/spawn help", NamedTextColor.AQUA)
-                .append(Component.text(" - Displays this help message.", NamedTextColor.GRAY)));
+                .append(Component.text(" - Displays this help message.", NamedTextColor.GOLD)));
         player.sendMessage(Component.text("--------------------------------", NamedTextColor.GREEN));
     }
 }

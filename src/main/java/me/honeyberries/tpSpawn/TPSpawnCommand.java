@@ -41,7 +41,7 @@ public class TPSpawnCommand implements CommandExecutor, TabExecutor {
         if (args.length == 1) {
             switch (args[0].toLowerCase()) {
                 case "help":
-                    showHelp(sender);
+                    sendHelpMessage(sender);
                     break;
                 case "reload":
                     settings.loadConfig();
@@ -58,7 +58,7 @@ public class TPSpawnCommand implements CommandExecutor, TabExecutor {
                             .append(Component.text(String.valueOf(playSound), NamedTextColor.AQUA)));
                     break;
                 default:
-                    sender.sendMessage(Component.text("Invalid action! Usage: /tpspawn <action> <value>", NamedTextColor.RED));
+                    sendHelpMessage(sender);
                     break;
             }
             return true;
@@ -73,13 +73,13 @@ public class TPSpawnCommand implements CommandExecutor, TabExecutor {
                     setSound(sender, args[1]);
                     break;
                 default:
-                    sender.sendMessage(Component.text("Invalid action! Usage: /tpspawn <action> <value>", NamedTextColor.RED));
+                    sendHelpMessage(sender);
                     break;
             }
             return true;
         }
 
-        sender.sendMessage(Component.text("Invalid Syntax! Usage: /tpspawn <action> <value>", NamedTextColor.RED));
+        sendHelpMessage(sender);
         return true;
     }
 
@@ -87,18 +87,20 @@ public class TPSpawnCommand implements CommandExecutor, TabExecutor {
      * Shows the help menu for the TPSpawn command.
      * @param sender The sender who invoked the command.
      */
-    private void showHelp(CommandSender sender) {
+    private void sendHelpMessage(CommandSender sender) {
         sender.sendMessage(Component.text("------ TPSpawn Command Help ------", NamedTextColor.GREEN));
         sender.sendMessage(Component.text("/tpspawn reload", NamedTextColor.AQUA)
-                .append(Component.text(" - Reloads the plugin configuration.", NamedTextColor.GRAY)));
+                .append(Component.text(" - Reloads the plugin configuration.", NamedTextColor.GOLD)));
         sender.sendMessage(Component.text("/tpspawn cooldown", NamedTextColor.AQUA)
-                .append(Component.text(" - Displays the current cooldown time.", NamedTextColor.GRAY)));
+                .append(Component.text(" - Displays the current cooldown time.", NamedTextColor.GOLD)));
         sender.sendMessage(Component.text("/tpspawn cooldown <value>", NamedTextColor.AQUA)
-                .append(Component.text(" - Sets a new cooldown time (in seconds).", NamedTextColor.GRAY)));
+                .append(Component.text(" - Sets a new cooldown time (in seconds).", NamedTextColor.GOLD)));
         sender.sendMessage(Component.text("/tpspawn sound", NamedTextColor.AQUA)
-                .append(Component.text(" - Shows if teleport sound is enabled.", NamedTextColor.GRAY)));
+                .append(Component.text(" - Shows if teleport sound is enabled.", NamedTextColor.GOLD)));
         sender.sendMessage(Component.text("/tpspawn sound <true/false>", NamedTextColor.AQUA)
-                .append(Component.text(" - Enables or disables teleport sound.", NamedTextColor.GRAY)));
+                .append(Component.text(" - Enables or disables teleport sound.", NamedTextColor.GOLD)));
+        sender.sendMessage(Component.text("/tpspawn help", NamedTextColor.AQUA)
+                .append(Component.text(" - Displays this help message.", NamedTextColor.GOLD)));
         sender.sendMessage(Component.text("----------------------------------", NamedTextColor.GREEN));
     }
 
@@ -119,7 +121,7 @@ public class TPSpawnCommand implements CommandExecutor, TabExecutor {
             sender.sendMessage(Component.text("Cooldown is now set to ", NamedTextColor.GOLD)
                     .append(Component.text(cooldown + " seconds!", NamedTextColor.AQUA)));
         } catch (NumberFormatException e) {
-            sender.sendMessage(Component.text("Invalid number format for cooldown.", NamedTextColor.RED));
+            sender.sendMessage(Component.text("Invalid number for cooldown.", NamedTextColor.RED));
         }
     }
 
