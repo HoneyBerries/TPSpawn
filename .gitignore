@@ -1,2 +1,12 @@
 # Project exclude paths
 /target/
+/.idea/
+/.vscode/
+/.DS_Store
+/node_modules/
+/dist/
+/build/
+/out/
+/.env
+.env.local
+.env.*.local

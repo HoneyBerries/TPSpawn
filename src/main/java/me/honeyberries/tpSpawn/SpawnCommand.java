@@ -79,7 +79,21 @@ public class SpawnCommand implements CommandExecutor, TabExecutor {
         }
 
         // Get world spawn and teleport the player
-        World world = Objects.requireNonNull(Bukkit.getWorld("world"), "Overworld does not exist!");
+        World world = null;
+        List<World> loadedWorlds = Bukkit.getWorlds();
+        // You can iterate and check the environment, which is safer:
+        for (World iter_world : loadedWorlds) {
+            if (iter_world.getEnvironment() == World.Environment.NORMAL) {
+                world = iter_world;
+                break; // Found the main overworld
+            }
+        }
+        if (world == null) {
+            player.sendMessage(Component.text("Failed to find the main overworld! " +
+                    "Please contact the server administrator", NamedTextColor.RED));
+            return true;
+        }
+
         player.teleportAsync(world.getSpawnLocation());
         player.sendMessage(Component.text("You went to the world's spawn!", NamedTextColor.GOLD)
                 .clickEvent(ClickEvent.suggestCommand("spawn")));
