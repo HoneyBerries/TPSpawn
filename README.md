@@ -58,7 +58,7 @@ All settings are customizable via the config.yml file or can be adjusted dynamic
 
 **Compatibility**
 
-- Minecraft Version: 1.19+
+- Minecraft Version: 1.21+
 - Platform: Paper / Purpur (Bukkit & Spigot not tested, use at your own risk!)
 - Folia: Fully supported for enhanced performance and scalability
 
