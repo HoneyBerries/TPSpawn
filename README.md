@@ -1,8 +1,8 @@
-**TPSpawn - Simple & Configurable Spawn Teleportation**
+# **TPSpawn - Simple & Configurable Spawn Teleportation**
 
 TPSpawn is a lightweight and highly configurable plugin for Minecraft servers, designed to enhance player navigation with easy teleportation to the world's spawn point. Perfect for survival, semi-vanilla, or roleplay servers, this plugin adds functionality while maintaining a balanced gameplay experience with cooldowns, sound effects, and full customization.
 
-**Features**
+## **Features**
 
 ✅ Teleport to Spawn – Instantly teleport to the world's spawn with `/spawn`.
 
@@ -17,7 +17,7 @@ TPSpawn is a lightweight and highly configurable plugin for Minecraft servers, d
 ✅ Folia Support – Fully compatible with Folia for enhanced performance and scalability, ensuring smooth operation even on large servers.
 
 
-**Commands**
+## **Commands**
 
 `/spawn` – Teleports the player to the world spawn.
 
@@ -30,7 +30,7 @@ TPSpawn is a lightweight and highly configurable plugin for Minecraft servers, d
 `/tpspawn help` – Displays available commands.
 
 
-**Permissions**
+## **Permissions**
 
 `tpspawn.command.spawn` – Allows use of the `/spawn` command.
 
@@ -39,7 +39,7 @@ TPSpawn is a lightweight and highly configurable plugin for Minecraft servers, d
 `tpspawn.cooldown.bypass` – Bypasses the teleport cooldown.
 
 
-**Configuration**
+## **Configuration**
 
 All settings are customizable via the config.yml file or can be adjusted dynamically using in-game commands. Modify the following options:
 
@@ -48,7 +48,7 @@ All settings are customizable via the config.yml file or can be adjusted dynamic
 - Permission nodes
 
 
-**Installation**
+## **Installation**
 
 1. Download the plugin .jar file from modrinth.
 2. Place the file into your server's plugins folder.
@@ -56,12 +56,12 @@ All settings are customizable via the config.yml file or can be adjusted dynamic
 4. Optionally, configure settings in config.yml (located in the TPSpawn folder after first launch).
 
 
-**Compatibility**
+## **Compatibility**
 
 - Minecraft Version: 1.21+
 - Platform: Paper / Purpur (Bukkit & Spigot not tested, use at your own risk!)
 - Folia: Fully supported for enhanced performance and scalability
 
-**License**
+## **License**
 
 This plugin is released under the MIT License.
