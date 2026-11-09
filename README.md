@@ -62,4 +62,4 @@ The jar is written to `target/`.
 
 ## License
 
-[MIT](LICENSE)
+[GPL-3.0](LICENSE)
