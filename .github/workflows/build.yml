@@ -16,7 +16,7 @@ jobs:
           cache: 'maven'
       - name: Build
         run: mvn -B package
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: Artifacts
           path: target/TPSpawn-*.jar
