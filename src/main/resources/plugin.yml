@@ -1,7 +1,7 @@
 name: TPspawn
-version: '1.2.0'
+version: '${project.version}'
 main: me.honeyberries.tpSpawn.TPSpawn
-api-version: '1.21'
+api-version: '26.3'
 authors: [ HoneyBerries ]
 folia-supported: true
 description: Lets you go to the world spawn by using /spawn

@@ -1,67 +1,65 @@
-# **TPSpawn - Simple & Configurable Spawn Teleportation**
+# TPSpawn
 
-TPSpawn is a lightweight and highly configurable plugin for Minecraft servers, designed to enhance player navigation with easy teleportation to the world's spawn point. Perfect for survival, semi-vanilla, or roleplay servers, this plugin adds functionality while maintaining a balanced gameplay experience with cooldowns, sound effects, and full customization.
+A lightweight plugin that adds a `/spawn` command with a configurable cooldown and optional teleport sound. Works on Paper, Purpur and Folia.
 
-## **Features**
+## Features
 
-✅ Teleport to Spawn – Instantly teleport to the world's spawn with `/spawn`.
+- **`/spawn`** teleports players to the world spawn instantly.
+- **Cooldown** to prevent spam, with a permission to bypass it.
+- **Teleport sound** (enderman warp), off by default.
+- **In-game configuration** with `/tpspawn`, with no restart needed.
+- **Folia support** using region-aware schedulers.
 
-✅ Customizable Cooldown – Set a cooldown to prevent spam using `/tpspawn cooldown <seconds>`.
+## Installation
 
-✅ Teleport Sound Effect – Enable or disable a teleportation sound using `/tpspawn sound <true/false>`.
+1. Download the latest jar from [Modrinth](https://modrinth.com/plugin/GDhdsO6S) or [GitHub Releases](https://github.com/HoneyBerries/TPSpawn/releases).
+2. Drop it into your server's `plugins` folder.
+3. Start the server. `plugins/TPspawn/config.yml` is created on first launch.
 
-✅ Configuration Reload – Apply changes instantly with `/tpspawn reload`.
+## Commands
 
-✅ Permissions Support – Fine-tune player access with customizable permission nodes.
+| Command | Description | Permission |
+|---|---|---|
+| `/spawn` | Teleport to the world spawn | `tpspawn.command.spawn` |
+| `/tpspawn reload` | Reload the config | `tpspawn.command.edit` |
+| `/tpspawn cooldown <seconds>` | Set the `/spawn` cooldown | `tpspawn.command.edit` |
+| `/tpspawn sound <true/false>` | Toggle the teleport sound | `tpspawn.command.edit` |
+| `/tpspawn help` | List commands | `tpspawn.command.edit` |
 
-✅ Folia Support – Fully compatible with Folia for enhanced performance and scalability, ensuring smooth operation even on large servers.
+## Permissions
 
+| Permission | Description | Default |
+|---|---|---|
+| `tpspawn.command.spawn` | Use `/spawn` | everyone |
+| `tpspawn.command.edit` | Use `/tpspawn` admin commands | op |
+| `tpspawn.cooldown.bypass` | Ignore the cooldown | op |
 
-## **Commands**
+## Configuration
 
-`/spawn` – Teleports the player to the world spawn.
+```yaml
+# Seconds between /spawn uses. 0 disables the cooldown.
+cooldown: 0
 
-`/tpspawn` reload – Reloads the plugin configuration.
+# Play an enderman warp sound on teleport.
+teleport-sound: false
+```
 
-`/tpspawn cooldown <seconds>` – Sets the teleport cooldown.
+These can also be changed in-game with `/tpspawn cooldown` and `/tpspawn sound`.
 
-`/tpspawn sound <true/false>` – Toggles the teleport sound effect.
+## Compatibility
 
-`/tpspawn help` – Displays available commands.
+- **Minecraft:** 26.3+
+- **Java:** 25+
+- **Platforms:** Paper, Purpur and Folia. Plain Spigot and Bukkit are untested and likely unsupported, since the plugin uses Paper APIs.
 
+## Building
 
-## **Permissions**
+```sh
+mvn package
+```
 
-`tpspawn.command.spawn` – Allows use of the `/spawn` command.
+The jar is written to `target/`.
 
-`tpspawn.command.edit` – Grants access to admin commands.
+## License
 
-`tpspawn.cooldown.bypass` – Bypasses the teleport cooldown.
-
-
-## **Configuration**
-
-All settings are customizable via the config.yml file or can be adjusted dynamically using in-game commands. Modify the following options:
-
-- Teleport cooldown time
-- Sound effect settings
-- Permission nodes
-
-
-## **Installation**
-
-1. Download the plugin .jar file from modrinth.
-2. Place the file into your server's plugins folder.
-3. Restart the server to load the plugin.
-4. Optionally, configure settings in config.yml (located in the TPSpawn folder after first launch).
-
-
-## **Compatibility**
-
-- Minecraft Version: 1.21+
-- Platform: Paper / Purpur (Bukkit & Spigot not tested, use at your own risk!)
-- Folia: Fully supported for enhanced performance and scalability
-
-## **License**
-
-This plugin is released under the MIT License.
+[MIT](LICENSE)
